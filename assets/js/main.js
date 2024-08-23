@@ -1,14 +1,25 @@
-/**
-* Template Name: Personal
-* Template URL: https://bootstrapmade.com/personal-free-resume-bootstrap-template/
-* Updated: Aug 07 2024 with Bootstrap v5.3.3
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
+
 
 (function() {
   "use strict";
 
+
+  document.addEventListener("DOMContentLoaded", function() {
+    // Get the current page name from the URL
+    const currentPath = window.location.pathname.split("/").pop();
+  
+    // Get all the links in the navigation
+    const navLinks = document.querySelectorAll('#navmenu a');
+  
+    // Loop through the links and add the "active" class to the matching link
+    navLinks.forEach(link => {
+      if (link.getAttribute('href') === currentPath) {
+        link.classList.add('active');
+      } else {
+        link.classList.remove('active');
+      }
+    });
+  });
   /**
    * Apply .scrolled class to the body as the page is scrolled down
    */
